@@ -1,0 +1,24 @@
+h4 {
+    color: red;
+    span {
+        font-size: 18px;
+        color: black;
+    }
+}
+div.header {
+    margin: auto;
+    display: flex;
+    img {
+        margin: auto;
+        height: 30px;
+    }
+}
+hr {
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+a.btn {
+    height: 36px;
+    display: flex;
+    color: white !important;
+}

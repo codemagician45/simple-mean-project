@@ -1,0 +1,25 @@
+div.bt-g {
+    display: flex; 
+    position:absolute;
+    width: 85%;
+    bottom: 10px;
+    right: 0;
+
+    button.delivery {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px; 
+        border: 2px solid red; 
+        color: red;
+    }
+    button.pickup {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+.btn-custom {
+    background: grey;
+    border-color: grey;
+    border-radius: 1em;
+    color: white;
+    margin-right: 4%;
+}

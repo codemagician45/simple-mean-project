@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+        <!-- <mat-tab-group>
+            <mat-tab label="Popular Items"> -->
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+            <h1 style="padding-left:8%">Popular Items</h1>
+            <mat-form-field>
+                <mat-label>Select an Store Id</mat-label>
+                <mat-select (selectionChange)="OnSelect($event)">
+                    <mat-option *ngFor="let id of store_ids" [value]="id.store_id">{{id.store_id}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12" *ngIf="currentId" style="margin-top:50px;">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4" style="padding-left: 0">
+                <!-- <mdb-carousel [isControls]="false" [animation]="'slide'">
+                    <mdb-carousel-item *ngFor="let image of product_img">
+                        <img class="d-block w-100" src="{{image}}" style="max-width: 200px">
+                    </mdb-carousel-item>
+                </mdb-carousel> -->
+                <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+                    <mdb-carousel-item *ngFor="let image of product_img">
+                        <img class="d-block w-100" src="{{image}}" alt="First slide" style="height: 350px">
+                    </mdb-carousel-item>
+                </mdb-carousel>
+                <p style="padding-left: 10%">You can see another Image by click side of this Image</p>
+                <!-- <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+                    <mdb-carousel-item *ngFor="let image of product_img>">
+                        <div class="view w-100">
+                            <img class="d-block w-100" src="{{image}}"
+                                alt="First slide">
+                            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-carousel-item>
+                </mdb-carousel> -->
+            </div>
+            <div class="col-8 col-md-8 col-sm-8 col-lg-8" style="padding-left: 12%; position: relative;padding-top: 10%">
+                <h1>{{ product_title }}</h1>
+                <h3>Price: {{price|currency}}</h3>
+                <h4>Store: {{currentId}} <span></span></h4>
+                <br>
+                <!-- <div [innerHTML]="product_des">
+
+                </div> -->
+                <button class="btn btn-primary" (click)="openDialog(currentId)" style="position: absolute;
+                right: 15%;">View</button>
+            </div>
+
+        </div>
+        <!-- </mat-tab> -->
+        <!-- <mat-tab label="Burgers/sandwiches"> Content 2 </mat-tab>
+            <mat-tab label="Subs"> Content 3 </mat-tab> -->
+        <!-- </mat-tab-group> -->
+    </div>
+</div>

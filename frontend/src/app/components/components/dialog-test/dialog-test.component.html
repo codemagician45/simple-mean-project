@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Overlay</h1>
+    <div class="row" style="margin-top: 30px;">
+        <!-- <div class="col-12 col-md-12 col-lg-12 col-sm-12"> -->
+        <div class="col-7 col-md-7 col-lg-7 col-sm-7" style="margin: auto">
+            <!-- <img src="{{dat.img}}" alt=""> -->
+            <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+                <mdb-carousel-item *ngFor="let image of images">
+                    <img class="d-block w-100" src="{{image}}" alt="First slide" style="height: 350px">
+                </mdb-carousel-item>
+            </mdb-carousel>
+            <p style="text-align: center">You can see another Image by click side of this Image</p>
+
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12" style="display: flex; margin-top: 50px">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div [innerHTML]="des">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>Color</h3>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                    <mat-radio-button class="example-radio-button" *ngFor="let color of colors" [value]="color"
+                        (change)="OnItemChange(color)">
+                        {{color}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <h3>Size & Price</h3>
+                <h5 *ngIf="!selected_color">Please Select Color</h5>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    *ngIf="selected_color">
+                    <mat-radio-button class="example-radio-button" *ngFor="let data of currentdatalist;"
+                        [value]="data.size" [disabled]="data.availableQuantity == 0">
+                        <div class="sp">
+                            <div class="s">{{data.size}}</div>
+                            <!-- <div class="p"><span>Price :</span>{{data.price| currency}}
+                            </div> -->
+                        </div>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+        </div>
+    </div>
+</div>
